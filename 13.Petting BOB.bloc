@@ -1,0 +1,63 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="(-CfzePHhugkPlRgs0[9" x="248" y="42">
+    <statement name="DO">
+      <block type="otto9_configuration" id="8W3N#.s`5J]rzzg/|Blr">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="nuX8g--[]%~27}@)AD-6">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="button_touch_sensor2" id="IZU?AX(%[yK]U=8z0%TV">
+            <field name="PIN_BUTTON">A0</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="otto_do" id="@w{MOcG]4B6UrIvV+%16">
+            <field name="otto_do_movement">swing</field>
+            <field name="otto_move_speed">1000</field>
+            <field name="otto_dance_size">25</field>
+            <next>
+              <block type="otto_do" id="9%@A5@c7_na}hF?@!Gx7">
+                <field name="otto_do_movement">updown</field>
+                <field name="otto_move_speed">1000</field>
+                <field name="otto_dance_size">25</field>
+                <next>
+                  <block type="otto_do" id="G=)n#a|REq2OT_v1MoLe">
+                    <field name="otto_do_movement">tiptoeSwing</field>
+                    <field name="otto_move_speed">1000</field>
+                    <field name="otto_dance_size">25</field>
+                    <next>
+                      <block type="otto_do" id="V9B]b3MP@1o]|iXJzo(J">
+                        <field name="otto_do_movement">jitter</field>
+                        <field name="otto_move_speed">1000</field>
+                        <field name="otto_dance_size">25</field>
+                        <next>
+                          <block type="otto_do" id="lae9~I=/wPdeX=CA_N(r">
+                            <field name="otto_do_movement">ascendingTurn</field>
+                            <field name="otto_move_speed">1000</field>
+                            <field name="otto_dance_size">25</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="otto_home" id="#y$/-iZESx@*pPGVC/4T"></block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

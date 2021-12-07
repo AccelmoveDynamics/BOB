@@ -1,0 +1,77 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="3syNGp4ODF-UBID3(MRq" x="-366" y="-280">
+    <statement name="DO">
+      <block type="otto9_configuration" id="Gq9HSb_tXLO?%$p?d!y-">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_repeat_ext" id="(`y}WY(ox?SsAAuV@:!4">
+        <value name="TIMES">
+          <shadow type="math_number" id="B5D2X~3jI)NsK?6rM#G4">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="otto_move" id="`*ofj,6C,ALklVMTCQ!t">
+            <field name="otto_move_sens">FORWARD</field>
+            <field name="otto_move_speed">1000</field>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_repeat_ext" id=")GPPaby16InMhP`0;4!u">
+            <value name="TIMES">
+              <shadow type="math_number" id=":/}m/iLuRstl]FLp*eBK">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="otto_do" id="z~GpcF|fYgoqg[!-4bup">
+                <field name="otto_do_movement">tiptoeSwing</field>
+                <field name="otto_move_speed">1000</field>
+                <field name="otto_dance_size">25</field>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_repeat_ext" id="B]nma[T(F|N(,f3.oy97">
+                <value name="TIMES">
+                  <shadow type="math_number" id="_C1RE@x00D*4j}g2tSg$">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="otto_dance" id="k_Y?5jjujVZjR4h%Pop)">
+                    <field name="otto_dance_movement">moonwalkerLEFT</field>
+                    <field name="otto_move_speed">1000</field>
+                    <field name="otto_dance_size">25</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_repeat_ext" id="%YhmNCFgxUR{Nn2W2fr2">
+                    <value name="TIMES">
+                      <shadow type="math_number" id="fOJp,D*Z;w.=aMOCz%oz">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <statement name="DO">
+                      <block type="otto_dance" id="+:U/!,_}/2Fh3NLFOZDa">
+                        <field name="otto_dance_movement">crusaitoRIGHT</field>
+                        <field name="otto_move_speed">1000</field>
+                        <field name="otto_dance_size">25</field>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

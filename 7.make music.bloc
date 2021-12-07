@@ -1,0 +1,89 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="+cbzK8s37${MnGX^6r_n" x="-490" y="-426">
+    <statement name="LOOP">
+      <block type="controls_repeat_ext" id="3HY%R=Db8Qo.=3!;opRe">
+        <value name="TIMES">
+          <shadow type="math_number" id="3o.=[Q#q_V[[0KJq$F%w">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="play" id="*-oB@L{.%p~$v,WIBE)M">
+            <field name="note">392</field>
+            <field name="tempo">500</field>
+            <value name="PIN">
+              <shadow type="analog_pin" id="?w7F6;?#(Ls=i397Z/}Z">
+                <field name="NUM">13</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="play" id="3[5LM~p5W};pQ#sD+3=9">
+                <field name="note">440</field>
+                <field name="tempo">500</field>
+                <value name="PIN">
+                  <shadow type="analog_pin" id="n)?^JXh]K={4J/)U6A.l">
+                    <field name="NUM">13</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="play" id="8rE5y=r/yfL^|W%cg9vl">
+                    <field name="note">392</field>
+                    <field name="tempo">500</field>
+                    <value name="PIN">
+                      <shadow type="analog_pin" id="=/4F^;nwxgbW[$2xAc}9">
+                        <field name="NUM">13</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="controls_repeat_ext" id="4Eg.[5Wt#E4!:Mr%XlCT">
+                        <value name="TIMES">
+                          <shadow type="math_number" id="lqFXnCi{(~m2CGZ)PnE]">
+                            <field name="NUM">13</field>
+                          </shadow>
+                        </value>
+                        <statement name="DO">
+                          <block type="play" id="l9U*{7z|E5{OtF]q8uG`">
+                            <field name="note">493</field>
+                            <field name="tempo">500</field>
+                            <value name="PIN">
+                              <shadow type="analog_pin" id="!?pF:NJdm.N${ky9Dcik">
+                                <field name="NUM">13</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="play" id="z!lCo`f),nok}g,|btR-">
+                            <field name="note">261</field>
+                            <field name="tempo">500</field>
+                            <value name="PIN">
+                              <shadow type="analog_pin" id="#z:K}x-TuU(++XbR/Hq0">
+                                <field name="NUM">13</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="play" id="h+~,.:pq-T=3ZK_jf?|L">
+                                <field name="note">493</field>
+                                <field name="tempo">500</field>
+                                <value name="PIN">
+                                  <shadow type="analog_pin" id="W2-rm~L:H]`ZiX#],2hI">
+                                    <field name="NUM">13</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

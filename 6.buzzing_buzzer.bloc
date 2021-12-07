@@ -1,0 +1,16 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="otto9_configuration" id="[5yUpLj~!bsEK,BW,s:k" x="-173" y="39">
+    <field name="PIN_YL">2</field>
+    <field name="PIN_YR">3</field>
+    <field name="PIN_RL">4</field>
+    <field name="PIN_RR">5</field>
+    <field name="PIN_Buzzer">13</field>
+    <next>
+      <block type="RTTTL_music" id="=*Y#ED5:$5+!#094PrR1">
+        <field name="PIN_BUZZER">13</field>
+        <field name="MELODY">JingleBell</field>
+      </block>
+    </next>
+  </block>
+</xml>

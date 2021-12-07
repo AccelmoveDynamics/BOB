@@ -1,0 +1,34 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id=")Cn8$JfQ$Z#=Ei:*LQmB" x="-899" y="-35">
+    <statement name="DO">
+      <block type="otto9_matrix_init" id="OrrBot+ZQi.]{5WAoq1-">
+        <field name="PIN_CLK">A1</field>
+        <field name="PIN_CS">A2</field>
+        <field name="PIN_DIN">A3</field>
+        <field name="Orientation">0</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="{aUfPyJ4g=Qf|6(IM]rB">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="button_touch_sensor2" id="~;i=?U?OU{,KHIiq*5Mh">
+            <field name="PIN_BUTTON">A0</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="otto9_mouth" id="6PmUjNCoJYnnKUoek*Rm">
+            <field name="otto9_mouth_choice">happyOpen</field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="otto9_mouth" id="UZJ_s~uLq4Q}h]L^d^C%">
+            <field name="otto9_mouth_choice">21</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

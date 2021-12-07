@@ -1,0 +1,103 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="o/%|%|-Ie79wY7tI.NtQ" x="-748" y="-418">
+    <statement name="DO">
+      <block type="otto9_configuration" id="W^vRLr;pnf!*8-Jl^Ab!">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <next>
+          <block type="ultrasonic_sensor" id="tbYsFuNhFMG-U^vyQ}j.">
+            <field name="US_NUMBER">1</field>
+            <field name="PIN_TRIG">8</field>
+            <field name="PIN_ECHO">9</field>
+            <next>
+              <block type="otto9_matrix_init" id=";qoz3*+cObi0lF:/?/DC">
+                <field name="PIN_CLK">A1</field>
+                <field name="PIN_CS">A2</field>
+                <field name="PIN_DIN">A3</field>
+                <field name="Orientation">0</field>
+                <next>
+                  <block type="otto_gesture" id="X=gLBu5LgX];Arv|DFAt">
+                    <field name="otto_gesture">OttoSuperHappy</field>
+                    <next>
+                      <block type="otto9_mouth" id="K8KH1Rm=={`?e}^,Z*zz">
+                        <field name="otto9_mouth_choice">happyOpen</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="vaCNX$a_Qu}MRBJxiVDF">
+        <mutation elseif="1" else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="]m[l#0N:1%Z#NPf-J*y{">
+            <field name="OP">LTE</field>
+            <value name="A">
+              <block type="ultrasonic_distance" id="kV-Yb`9GXnhk09|OjBkV">
+                <field name="US_NUMBER">1</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="f9/*^xaba!exp[^EZKFj">
+                <field name="NUM">10</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="otto9_mouth" id="G:YoTIjJGS9`DL@HzPB}">
+            <field name="otto9_mouth_choice">tongueOut</field>
+            <next>
+              <block type="otto_move" id="6Hr5-zpZmJ#.0qFd}YXO">
+                <field name="otto_move_sens">SHAKELEFT</field>
+                <field name="otto_move_speed">1000</field>
+                <next>
+                  <block type="otto_move" id="_v{2TacW2|Yni`b;:uab">
+                    <field name="otto_move_sens">SHAKERIGHT</field>
+                    <field name="otto_move_speed">1000</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="button_touch_sensor2" id="b46[Q/+_JvUIvokd[Ike">
+            <field name="PIN_BUTTON">A0</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="otto9_mouth" id=";0N/-`7y||R?RSA@~y4/">
+            <field name="otto9_mouth_choice">heart</field>
+            <next>
+              <block type="otto_gesture" id="!AF=}aO30.zDhPgwrxli">
+                <field name="otto_gesture">OttoLove</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="otto9_mouth" id="Ca[t;jsz`8k+EM%HKZ+o">
+            <field name="otto9_mouth_choice">happyClosed</field>
+            <next>
+              <block type="otto_move" id="M,jL6^.[JOIlUZ(,RhN9">
+                <field name="otto_move_sens">FORWARD</field>
+                <field name="otto_move_speed">1000</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

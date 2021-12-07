@@ -1,0 +1,195 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="LmbD?d_~iz{30-@?dh1t" x="-1542" y="-604">
+    <statement name="DO">
+      <block type="serial_init" id="6p5L9nMB,C*O4akD*bh*">
+        <field name="PINBAUDIOS">9600</field>
+        <next>
+          <block type="ultrasonic_sensor" id="MM){:[gG`qB#l$oB%sM1">
+            <field name="US_NUMBER">1</field>
+            <field name="PIN_TRIG">8</field>
+            <field name="PIN_ECHO">9</field>
+            <next>
+              <block type="otto9_configuration" id="IM`L57bxR2PnL-)IAAi9">
+                <field name="PIN_YL">2</field>
+                <field name="PIN_YR">3</field>
+                <field name="PIN_RL">4</field>
+                <field name="PIN_RR">5</field>
+                <field name="PIN_Buzzer">13</field>
+                <next>
+                  <block type="otto9_matrix_init" id="3d[u2WkgHvAPWU|aq}Z.">
+                    <field name="PIN_CLK">A1</field>
+                    <field name="PIN_CS">A2</field>
+                    <field name="PIN_DIN">A3</field>
+                    <field name="Orientation">0</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="serial_println" id="q9+2.-^:bY6(m$klwx-?">
+        <value name="CONTENT">
+          <shadow type="text" id="@YwUua}uTdJ~ZIK*2[RD">
+            <field name="TEXT">text</field>
+          </shadow>
+          <block type="ultrasonic_distance" id="z3$NX51=p*[}:J8P~+gB">
+            <field name="US_NUMBER">1</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="k5B:L^ntCP%)9H=at:9O">
+            <mutation elseif="1" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_operation" id="0np;@Xlc#j7xKSNBNF|J">
+                <field name="OP">and</field>
+                <value name="A">
+                  <block type="logic_compare" id="Xi3]bB]e!4,q_BJ^~4d^">
+                    <field name="OP">GTE</field>
+                    <value name="A">
+                      <block type="ultrasonic_distance" id="QZ$^0.ulYb5$2GS(FC_4">
+                        <field name="US_NUMBER">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="wu{GQ]NHTLrCy(TnsIsw">
+                        <field name="NUM">10</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id=":!?YdDC-81/ZmjNsWPgm">
+                    <field name="OP">LTE</field>
+                    <value name="A">
+                      <block type="ultrasonic_distance" id="g6.(oMzBL)4^-rz@jVJJ">
+                        <field name="US_NUMBER">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="5HR$`G$L~DK4)fjf.aj~">
+                        <field name="NUM">50</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="otto_sound" id="$*PW{jR4zRV)EQ7Oq!k=">
+                <field name="otto_sound">S_mode1</field>
+                <next>
+                  <block type="otto9_mouth" id="591TZSEe:Z*8?cQN|%{O">
+                    <field name="otto9_mouth_choice">happyClosed</field>
+                    <next>
+                      <block type="otto_move" id=")*.QGi;5M+8rpiIgG^Yq">
+                        <field name="otto_move_sens">FORWARD</field>
+                        <field name="otto_move_speed">1000</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_operation" id="-y=Eyh])^}xXO?3N1zYU">
+                <field name="OP">and</field>
+                <value name="A">
+                  <block type="logic_compare" id="UxT$?$!.Yk0v{xN:UKm,">
+                    <field name="OP">GTE</field>
+                    <value name="A">
+                      <block type="ultrasonic_distance" id="6$!B2D,P_NFDm{Zp)Cpk">
+                        <field name="US_NUMBER">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="3/a:tAIqB_R8U/j8#y#!">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="BoQ)h{(?}}=tUVL~5Djk">
+                    <field name="OP">LTE</field>
+                    <value name="A">
+                      <block type="ultrasonic_distance" id="0Q{+*|bQ(|tZC8ny%6B.">
+                        <field name="US_NUMBER">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="#XgbsudD|oI(OSi_=@z_">
+                        <field name="NUM">10</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="otto9_mouth" id="C`ZZdeknlu}a$qEY?mCE">
+                <field name="otto9_mouth_choice">24</field>
+                <next>
+                  <block type="otto_sound" id="|{l;67T%~Xa*fyn.W/s9">
+                    <field name="otto_sound">S_mode1</field>
+                    <next>
+                      <block type="otto_move" id="^6B?VYEG=uBtE2%UY@gz">
+                        <field name="otto_move_sens">BACKWARD</field>
+                        <field name="otto_move_speed">1000</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="otto_sound" id="`?*f(/sGEINQ0C7D=mSc">
+                <field name="otto_sound">S_sleeping</field>
+                <next>
+                  <block type="otto9_matrix" id="xzUl+[!VHPLoS/:WJBa%">
+                    <field name="otto9_matrix_pixel0">FALSE</field>
+                    <field name="otto9_matrix_pixel1">FALSE</field>
+                    <field name="otto9_matrix_pixel2">FALSE</field>
+                    <field name="otto9_matrix_pixel3">FALSE</field>
+                    <field name="otto9_matrix_pixel4">FALSE</field>
+                    <field name="otto9_matrix_pixel5">FALSE</field>
+                    <field name="otto9_matrix_pixel6">FALSE</field>
+                    <field name="otto9_matrix_pixel7">FALSE</field>
+                    <field name="otto9_matrix_pixel8">FALSE</field>
+                    <field name="otto9_matrix_pixel9">FALSE</field>
+                    <field name="otto9_matrix_pixel10">FALSE</field>
+                    <field name="otto9_matrix_pixel11">FALSE</field>
+                    <field name="otto9_matrix_pixel12">FALSE</field>
+                    <field name="otto9_matrix_pixel13">TRUE</field>
+                    <field name="otto9_matrix_pixel14">TRUE</field>
+                    <field name="otto9_matrix_pixel15">TRUE</field>
+                    <field name="otto9_matrix_pixel16">TRUE</field>
+                    <field name="otto9_matrix_pixel17">FALSE</field>
+                    <field name="otto9_matrix_pixel18">FALSE</field>
+                    <field name="otto9_matrix_pixel19">FALSE</field>
+                    <field name="otto9_matrix_pixel20">FALSE</field>
+                    <field name="otto9_matrix_pixel21">FALSE</field>
+                    <field name="otto9_matrix_pixel22">FALSE</field>
+                    <field name="otto9_matrix_pixel23">FALSE</field>
+                    <field name="otto9_matrix_pixel24">FALSE</field>
+                    <field name="otto9_matrix_pixel25">FALSE</field>
+                    <field name="otto9_matrix_pixel26">FALSE</field>
+                    <field name="otto9_matrix_pixel27">FALSE</field>
+                    <field name="otto9_matrix_pixel28">FALSE</field>
+                    <field name="otto9_matrix_pixel29">FALSE</field>
+                    <next>
+                      <block type="otto_home" id="yMPLk%ZGZD0g$f*?t|{p"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

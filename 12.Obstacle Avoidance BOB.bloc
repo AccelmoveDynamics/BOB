@@ -1,0 +1,94 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="3syNGp4ODF-UBID3(MRq" x="-973" y="-527">
+    <statement name="DO">
+      <block type="serial_init" id=")@lBA%ii0BJ~|m7hCm?/">
+        <field name="PINBAUDIOS">9600</field>
+        <next>
+          <block type="ultrasonic_sensor" id="U`CO(X(gfCx(pgPJ$`Pz">
+            <field name="US_NUMBER">1</field>
+            <field name="PIN_TRIG">8</field>
+            <field name="PIN_ECHO">9</field>
+            <next>
+              <block type="otto9_configuration" id="2tYQ{+E4y^Y];[:ZU+-3">
+                <field name="PIN_YL">2</field>
+                <field name="PIN_YR">3</field>
+                <field name="PIN_RL">4</field>
+                <field name="PIN_RR">5</field>
+                <field name="PIN_Buzzer">13</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="serial_println" id=".Xu?}y??x1l4C46VF?ef">
+        <value name="CONTENT">
+          <shadow type="text" id="Ap`r_l,5#]^H?sO5I-6B">
+            <field name="TEXT">text</field>
+          </shadow>
+          <block type="ultrasonic_distance" id="9w2N$}1sfP5PFnv[SPtj">
+            <field name="US_NUMBER">1</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="lF@}y.b`AgF10kZjK;4Y">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="]2gL,9)JJ4EK$hld0BVK">
+                <field name="OP">LTE</field>
+                <value name="A">
+                  <block type="ultrasonic_distance" id="{$YeUj%~-+6a.|XGxWjU">
+                    <field name="US_NUMBER">1</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="AUl%n8Bd.yS(I6fl|4o/">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_repeat_ext" id="4A!++r~epQPV?kFxm4u!">
+                <value name="TIMES">
+                  <shadow type="math_number" id="$Ie.+)SUyLpI!,N{8c0/">
+                    <field name="NUM">2</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="otto_move" id="H.*R!ppsI_`k;zuXL1|X">
+                    <field name="otto_move_sens">BACKWARD</field>
+                    <field name="otto_move_speed">1000</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_repeat_ext" id="vtXn8/kBQazP{@#-az!G">
+                    <value name="TIMES">
+                      <shadow type="math_number" id="U4}qTAx#Gm8;CV]_29ds">
+                        <field name="NUM">7</field>
+                      </shadow>
+                    </value>
+                    <statement name="DO">
+                      <block type="otto_move" id="em{hd:E)7%Px5_l4On,_">
+                        <field name="otto_move_sens">RIGHT</field>
+                        <field name="otto_move_speed">1000</field>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="otto_move" id=",5oC/fNV|SX}4m6YHM?Q">
+                <field name="otto_move_sens">FORWARD</field>
+                <field name="otto_move_speed">1000</field>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,22 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id=")Cn8$JfQ$Z#=Ei:*LQmB" x="-576" y="-138">
+    <statement name="LOOP">
+      <block type="otto_home" id="^WRPEW7-,vaL4`l`MX=T">
+        <next>
+          <block type="otto9_matrix_init" id="HEp=x@S~v?_DD1|:*Aow">
+            <field name="PIN_CLK">A1</field>
+            <field name="PIN_CS">A2</field>
+            <field name="PIN_DIN">A3</field>
+            <field name="Orientation">0</field>
+            <next>
+              <block type="otto9_mouth" id="BuX*@BIpk:H@aiJuJ6tx">
+                <field name="otto9_mouth_choice">happyOpen</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

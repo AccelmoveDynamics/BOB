@@ -1,0 +1,15 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="otto9_configuration" id="!PAGceH?=}-/TRy9,:,d" x="-204" y="92">
+    <field name="PIN_YL">2</field>
+    <field name="PIN_YR">3</field>
+    <field name="PIN_RL">4</field>
+    <field name="PIN_RR">5</field>
+    <field name="PIN_Buzzer">13</field>
+    <next>
+      <block type="otto_sound" id="-er#hkauuG=AxBz@D#R0">
+        <field name="otto_sound">S_superHappy</field>
+      </block>
+    </next>
+  </block>
+</xml>
